@@ -1,4 +1,4 @@
-package com.alibaba.json.bvt.parser;
+package param_tests;
 
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
