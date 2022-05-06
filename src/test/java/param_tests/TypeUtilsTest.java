@@ -7,7 +7,6 @@ import java.sql.Timestamp;
 import java.util.*;
 
 import com.alibaba.fastjson.parser.ParserConfig;
-import junit.framework.TestCase;
 
 import org.junit.Assert;
 
@@ -20,11 +19,12 @@ import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import static org.junit.Assert.assertNotNull;
 
 
 @SuppressWarnings("rawtypes")
 @RunWith(Enclosed.class)
-public class TypeUtilsTest extends TestCase {
+public class TypeUtilsTest {
 
     public static class Without_params{
         private HashMap hashMap;
@@ -365,7 +365,7 @@ public class TypeUtilsTest extends TestCase {
             } catch (JSONException e) {
                 error = e;
             }
-            Assert.assertNotNull(error);
+            assertNotNull(error);
         }
 
         @Test
@@ -562,7 +562,7 @@ public class TypeUtilsTest extends TestCase {
             } catch (JSONException e) {
                 error = e;
             }
-            Assert.assertNotNull(error);
+            assertNotNull(error);
         }
     }
 
@@ -604,7 +604,7 @@ public class TypeUtilsTest extends TestCase {
             } catch (JSONException e) {
                 error = e;
             }
-            Assert.assertNotNull(error);
+            assertNotNull(error);
         }
 
         @Test

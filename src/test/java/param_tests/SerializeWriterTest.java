@@ -1,8 +1,6 @@
 package param_tests;
 
 import org.junit.Assert;
-import junit.framework.TestCase;
-
 import com.alibaba.fastjson.serializer.SerializeWriter;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
@@ -13,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Enclosed.class)
-public class SerializeWriterTest extends TestCase {
+public class SerializeWriterTest {
 
 	@RunWith(Parameterized.class)
 	public static class Test_0 {
