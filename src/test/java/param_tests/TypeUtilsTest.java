@@ -451,7 +451,6 @@ public class TypeUtilsTest {
         }
 
         @Test
-        @Ignore
         public void test_cast_to_Timestamp_not_error() throws Exception {
             JSONObject json = new JSONObject();
             json.put("date", -1);
