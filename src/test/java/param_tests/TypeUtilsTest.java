@@ -36,19 +36,19 @@ public class TypeUtilsTest {
         }
 
         @Test
-        public void test_0() throws Exception {
+        public void test_0() {
             //HashMap map = new HashMap();
             Assert.assertTrue(this.hashMap == TypeUtils.castToJavaBean(this.hashMap, Map.class));
         }
 
         @Test
-        public void test_1() throws Exception {
+        public void test_1() {
             //JSONObject map = new JSONObject();
             Assert.assertTrue(jsonMap == TypeUtils.castToJavaBean(jsonMap, Map.class));
         }
 
         @Test
-        public void test_cast_Array() throws Exception {
+        public void test_cast_Array() {
             Assert.assertEquals(Integer[].class, TypeUtils.cast(new ArrayList(), Integer[].class, null).getClass());
         }
     }
@@ -82,24 +82,22 @@ public class TypeUtilsTest {
         }
 
         @Test
-        public void test_2() throws Exception {
-            //JSONObject map = new JSONObject();
+        public void test_2() {
             map.put(this.key1, this.value1);
             map.put(this.key2, this.value2);
 
             User user = TypeUtils.castToJavaBean(map, User.class);
-            Assert.assertEquals((long) this.value1, user.getId());
+            Assert.assertEquals(this.value1, user.getId());
             Assert.assertEquals(this.value2, user.getName());
         }
 
         @Test
-        public void test_3() throws Exception {
-            //JSONObject map = new JSONObject();
+        public void test_3() {
             map.put(this.key1, this.value1);
             map.put(this.key2, this.value2);
 
             User user = JSON.toJavaObject(map, User.class);
-            Assert.assertEquals((long) this.value1, user.getId());
+            Assert.assertEquals(this.value1, user.getId());
             Assert.assertEquals(this.value2, user.getName());
         }
     }
@@ -129,15 +127,13 @@ public class TypeUtilsTest {
         }
 
         @Test
-        public void test_cast_Integer() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_Integer() {
             json.put(this.key, this.value);
             Assert.assertEquals(new Integer((int) this.value), json.getObject(this.key, int.class));
         }
 
         @Test
-        public void test_cast_Integer_2() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_Integer_2() {
             json.put(this.key, this.value);
             Assert.assertEquals(new Integer((int) this.value), json.getObject(this.key, Integer.class));
         }
@@ -168,84 +164,72 @@ public class TypeUtilsTest {
         }
 
         @Test
-        public void test_cast_to_long() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_long() {
             json.put(this.key, this.value);
             Assert.assertEquals(new Long(this.value), json.getObject(this.key, long.class));
         }
 
         @Test
-        public void test_cast_to_Long() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Long() {
             json.put(this.key, 1);
             Assert.assertEquals(new Long(this.value), json.getObject(this.key, Long.class));
         }
 
         @Test
-        public void test_cast_to_short() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_short() {
             json.put(this.key, this.value);
             Assert.assertEquals(new Short((short) this.value), json.getObject(this.key, short.class));
         }
 
         @Test
-        public void test_cast_to_Short() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Short()  {
             json.put(this.key, 1);
             Assert.assertEquals(new Short((short) this.value), json.getObject(this.key, Short.class));
         }
         @Test
-        public void test_cast_to_byte() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_byte() {
             json.put(this.key, this.value);
             Assert.assertEquals(new Byte((byte) this.value), json.getObject(this.key, byte.class));
         }
 
         @Test
-        public void test_cast_to_Byte() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Byte()  {
             json.put(this.key, 1);
             Assert.assertEquals(new Byte((byte) this.value), json.getObject(this.key, Byte.class));
         }
 
         @Test
-        public void test_cast_to_BigInteger() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_BigInteger() {
             json.put(this.key, this.value);
             Assert.assertEquals(new BigInteger(String.valueOf(this.value)), json.getObject(this.key, BigInteger.class));
         }
 
         @Test
-        public void test_cast_to_BigDecimal() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_BigDecimal() {
             json.put(this.key, this.value);
             Assert.assertEquals(new BigDecimal(String.valueOf(this.value)), json.getObject(this.key, BigDecimal.class));
         }
 
         @Test
-        public void test_cast_to_boolean() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_boolean() {
             json.put(this.key, this.value);
             Assert.assertEquals(Boolean.TRUE, json.getObject(this.key, boolean.class));
         }
 
         @Test
-        public void test_cast_to_Boolean() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Boolean() {
             json.put(this.key, this.value);
             Assert.assertEquals(Boolean.TRUE, json.getObject(this.key, Boolean.class));
         }
 
         @Test
-        public void test_cast_null() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_null(){
             json.put(this.key, null);
             Assert.assertEquals(null, json.getObject(this.key, Boolean.class));
         }
 
         @Test
-        public void test_cast_to_String() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_String() {
             json.put(this.key, this.value);
             Assert.assertEquals(String.valueOf(this.value), json.getObject(this.key, String.class));
         }
@@ -278,84 +262,63 @@ public class TypeUtilsTest {
         }
 
         @Test
-        public void test_cast_to_Date() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Date() {
             json.put(this.key, this.millis);
             Assert.assertEquals(new Date(this.millis), json.getObject(this.key, Date.class));
         }
 
         @Test
-        public void test_cast_to_SqlDate() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_SqlDate() {
             json.put(this.key, this.millis);
             Assert.assertEquals(new java.sql.Date(this.millis), json.getObject(this.key, java.sql.Date.class));
         }
 
         @Test
-        public void test_cast_to_SqlDate_string() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_SqlDate_string() {
             json.put(this.key, Long.toString(this.millis));
             Assert.assertEquals(new java.sql.Date(this.millis), json.getObject(this.key, java.sql.Date.class));
         }
 
         @Test
-        public void test_cast_to_SqlDate_null() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_SqlDate_null(){
             json.put(this.key, null);
             Assert.assertEquals(null, json.getObject(this.key, java.sql.Date.class));
         }
 
         @Test
-        public void test_cast_to_SqlDate_null2() throws Exception {
+        public void test_cast_to_SqlDate_null2(){
             Assert.assertEquals(null, TypeUtils.castToSqlDate(null));
         }
 
         @Test
-        public void test_cast_to_SqlDate_util_Date() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_SqlDate_util_Date() {
             json.put(this.key, new Date(this.millis));
             Assert.assertEquals(new java.sql.Date(this.millis), json.getObject(this.key, java.sql.Date.class));
         }
 
         @Test
-        public void test_cast_to_SqlDate_sql_Date() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_SqlDate_sql_Date() {
             json.put(this.key, new java.sql.Date(millis));
             Assert.assertEquals(new java.sql.Date(millis), json.getObject(this.key, java.sql.Date.class));
         }
 
         @Test
-        public void test_cast_to_SqlDate_sql_Date2() throws Exception {
-            //long millis = System.currentTimeMillis();
-
+        public void test_cast_to_SqlDate_sql_Date2()  {
             java.sql.Date date = new java.sql.Date(millis);
             Assert.assertEquals(date, TypeUtils.castToSqlDate(date));
         }
 
         @Test
-        public void test_cast_to_SqlDate_calendar() throws Exception {
-            //long millis = System.currentTimeMillis();
-
+        public void test_cast_to_SqlDate_calendar() {
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(millis);
 
-            //JSONObject json = new JSONObject();
             json.put(key, calendar);
             Assert.assertEquals(new java.sql.Date(millis), json.getObject(this.key, java.sql.Date.class));
         }
 
         @Test
-        public void test_cast_to_SqlDate_error() throws Exception {
+        public void test_cast_to_SqlDate_error() {
             JSONObject json = new JSONObject();
             json.put(this.key, 0);
 
@@ -369,83 +332,63 @@ public class TypeUtilsTest {
         }
 
         @Test
-        public void test_cast_to_Timestamp() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Timestamp() {
             json.put(this.key, millis);
             Assert.assertEquals(new java.sql.Timestamp(millis), json.getObject(this.key, java.sql.Timestamp.class));
         }
 
         @Test
-        public void test_cast_to_Timestamp_string() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Timestamp_string(){
             json.put(this.key, Long.toString(millis));
             Assert.assertEquals(new java.sql.Timestamp(millis), json.getObject(this.key, java.sql.Timestamp.class));
         }
         @Test
-        public void test_cast_to_Timestamp_number() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Timestamp_number() {
             json.put(this.key, new BigDecimal(Long.toString(millis)));
             Assert.assertEquals(new java.sql.Timestamp(millis), json.getObject(this.key, java.sql.Timestamp.class));
         }
 
         @Test
-        public void test_cast_to_Timestamp_null() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Timestamp_null() {
             json.put(this.key, null);
             Assert.assertEquals(null, json.getObject(this.key, java.sql.Timestamp.class));
         }
 
         @Test
-        public void test_cast_to_Timestamp_null2() throws Exception {
+        public void test_cast_to_Timestamp_null2(){
             Assert.assertEquals(null, TypeUtils.castToTimestamp(null));
         }
 
         @Test
-        public void test_cast_to_Timestamp_1970_01_01_00_00_00() throws Exception {
+        public void test_cast_to_Timestamp_1970_01_01_00_00_00(){
             JSON.defaultTimeZone = TimeZone.getTimeZone(this.timeZone);
             Assert.assertEquals(new Timestamp(0), TypeUtils.castToTimestamp("1970-01-01 08:00:00"));
         }
 
         @Test
-        public void test_cast_to_Timestamp_util_Date() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Timestamp_util_Date(){
             json.put(this.key, new Date(millis));
             Assert.assertEquals(new java.sql.Timestamp(millis), json.getObject(this.key, java.sql.Timestamp.class));
         }
 
         @Test
-        public void test_cast_to_Timestamp_sql_Date() throws Exception {
-            //long millis = System.currentTimeMillis();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_to_Timestamp_sql_Date() {
             json.put(this.key, new java.sql.Date(millis));
             Assert.assertEquals(new java.sql.Timestamp(millis), json.getObject(this.key, java.sql.Timestamp.class));
         }
 
         @Test
-        public void test_cast_to_Timestamp_sql_Timestamp() throws Exception {
-            //long millis = System.currentTimeMillis();
-
+        public void test_cast_to_Timestamp_sql_Timestamp() {
             java.sql.Timestamp date = new java.sql.Timestamp(millis);
             Assert.assertEquals(date, TypeUtils.castToTimestamp(date));
         }
 
         @Test
-        public void test_cast_to_Timestamp_calendar() throws Exception {
-            //long millis = System.currentTimeMillis();
-
+        public void test_cast_to_Timestamp_calendar(){
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(millis);
 
-            //JSONObject json = new JSONObject();
+
             json.put(this.key, calendar);
             Assert.assertEquals(new java.sql.Timestamp(millis), json.getObject(this.key, java.sql.Timestamp.class));
         }
@@ -470,7 +413,6 @@ public class TypeUtilsTest {
 
     @RunWith(Parameterized.class)
     public static class Test_cast_big_decimal {
-        private JSONObject json;;
         private String str_value;
 
 
@@ -482,7 +424,6 @@ public class TypeUtilsTest {
         }
 
         public Test_cast_big_decimal(String value) {
-            this.json = new JSONObject();
             this.configure(value);
         }
 
@@ -491,13 +432,13 @@ public class TypeUtilsTest {
         }
 
         @Test
-        public void test_cast_to_BigDecimal_same() throws Exception {
+        public void test_cast_to_BigDecimal_same() {
             BigDecimal value = new BigDecimal(this.str_value);
             Assert.assertEquals(true, value == TypeUtils.castToBigDecimal(value));
         }
 
         @Test
-        public void test_cast_to_BigInteger_same() throws Exception {
+        public void test_cast_to_BigInteger_same() {
             BigInteger value = new BigInteger(this.str_value);
             Assert.assertEquals(true, value == TypeUtils.castToBigInteger(value));
         }
@@ -531,28 +472,19 @@ public class TypeUtilsTest {
         }
 
         @Test
-        public void test_cast_ab() throws Exception {
-            //B b = new B();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_ab() {
             json.put(this.key, b);
             Assert.assertEquals(b, json.getObject(this.key, A.class));
         }
 
         @Test
-        public void test_cast_ab_1() throws Exception {
-            //B b = new B();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_ab_1()  {
             json.put(this.key, b);
             Assert.assertEquals(b, json.getObject(this.key, IA.class));
         }
 
         @Test
-        public void test_cast_ab_error() throws Exception {
-            //A a = new A();
-
-            //JSONObject json = new JSONObject();
+        public void test_cast_ab_error() {
             json.put(this.key, a);
 
             JSONException error = null;
@@ -593,8 +525,7 @@ public class TypeUtilsTest {
         }
 
         @Test
-        public void test_error() throws Exception {
-            //JSONObject json = new JSONObject();
+        public void test_error() {
             json.put(this.key, this.value);
 
             JSONException error = null;
@@ -608,7 +539,6 @@ public class TypeUtilsTest {
 
         @Test
         public void test_error_2() throws Exception {
-            //JSONObject json = new JSONObject();
             json.put(this.key, this.value);
 
             Method method = TypeUtilsTest.class.getMethod(this.methodName, List.class);

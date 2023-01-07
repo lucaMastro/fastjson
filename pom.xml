@@ -86,13 +86,6 @@
       </activation>
       <dependencies>
         <dependency>
-          <groupId>com.alibaba</groupId>
-          <artifactId>fastjson</artifactId>
-          <version>1.2.79</version>
-          <scope>system</scope>
-          <systemPath>${basedir}/src/test/lib/fastjson-1.2.79-fat.jar</systemPath>
-        </dependency>
-        <dependency>
           <groupId>commons-logging</groupId>
           <artifactId>commons-logging</artifactId>
           <version>1.1</version>

@@ -48,8 +48,7 @@ public class SerializeWriterTest {
 		}
 
 		@Test
-		public void test_0() throws Exception {
-			//SerializeWriter writer = new SerializeWriter();
+		public void test_0() {
 			writer.append(this.aChar);
 			writer.writeInt(this.anInt);
 			Assert.assertEquals(this.first_out, writer.toString());
@@ -79,7 +78,7 @@ public class SerializeWriterTest {
 
 		public void configure(int anInt){
 
-			this. anInt = anInt;
+			this.anInt = anInt;
 
 			StringBuilder outputs = new StringBuilder();
 			outputs.append(anInt);
@@ -87,8 +86,7 @@ public class SerializeWriterTest {
 		}
 
 		@Test
-		public void test_1() throws Exception {
-			//SerializeWriter writer = new SerializeWriter();
+		public void test_1() {
 			writer.writeInt(this.anInt);
 			Assert.assertEquals(this.first_out, writer.toString());
 		}
@@ -124,8 +122,7 @@ public class SerializeWriterTest {
 		}
 
 		@Test
-		public void test_4() throws Exception {
-			//SerializeWriter writer = new SerializeWriter();
+		public void test_4() {
 			writer.writeInt(this.anInt);
 			writer.write(this.aChar);
 			Assert.assertEquals(this.first_out, writer.toString());
@@ -160,8 +157,7 @@ public class SerializeWriterTest {
 		}
 
 		@Test
-		public void test_5() throws Exception {
-			//SerializeWriter writer = new SerializeWriter();
+		public void test_5() {
 			writer.writeLong(this.aLong);
 			Assert.assertEquals(this.first_out, writer.toString());
 		}
@@ -198,8 +194,7 @@ public class SerializeWriterTest {
 		}
 
 		@Test
-		public void test_6() throws Exception {
-			//SerializeWriter writer = new SerializeWriter();
+		public void test_6() {
 			writer.writeLong(this.aLong);
 			writer.write(this.aChar);
 			Assert.assertEquals(this.first_out, writer.toString());
